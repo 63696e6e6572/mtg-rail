@@ -1,0 +1,104 @@
+<h1><a href="/">Home</a> - <%= @card.name %></h1>
+
+<ul>
+  <li><%= link_to "Edit Card", edit_card_path(@card) %></li>
+  <li><%= link_to "Delete Card", card_path(@card),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>
+
+<div class="flex-container">
+    <div class="flex-item-left">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="cardDetailNameLeftRight">Number:</td><td class="cardDetailInformation"><%= @card.number %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Artist:</td><td class="cardDetailInformation"><%= @card.artist %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Alternative Deck Limit:</td><td class="cardDetailInformation"><%= @card.hasAlternativeDeckLimit %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Content Warning:</td><td class="cardDetailInformation"><%= @card.hasContentWarning %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Foil:</td><td class="cardDetailInformation"><%= @card.hasFoil %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Non-Foil:</td><td class="cardDetailInformation"><%= @card.hasNonFoil %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Alternative:</td><td class="cardDetailInformation"><%= @card.isAlternative %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Full Art:</td><td class="cardDetailInformation"><%= @card.isFullArt %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Online Only:</td><td class="cardDetailInformation"><%= @card.isOnlineOnly %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Oversized:</td><td class="cardDetailInformation"><%= @card.isOversized %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Promo:</td><td class="cardDetailInformation"><%= @card.isPromo %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Reprint:</td><td class="cardDetailInformation"><%= @card.isReprint %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Reserved:</td><td class="cardDetailInformation"><%= @card.isReserved %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Starter:</td><td class="cardDetailInformation"><%= @card.isStarter %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Story Spotlight:</td><td class="cardDetailInformation"><%= @card.isStorySpotlight %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Textless:</td><td class="cardDetailInformation"><%= @card.isTextless %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Timeshifted:</td><td class="cardDetailInformation"><%= @card.isTimeshifted %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Watermark:</td><td class="cardDetailInformation"><%= @card.watermark %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Release Date:</td><td class="cardDetailInformation"><%= @card.originalReleaseDate %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Created:</td><td class="cardDetailInformation"><%= @card.created_at %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Updated:</td><td class="cardDetailInformation"><%= @card.updated_at %></td></tr>
+        </table>
+    </div>
+    <div class="flex-item-middle">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="cardDetailNameMiddle">Card Types:</td><td class="cardDetailInformation"><%= @card.cardTypes %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Card Type:</td><td class="cardDetailInformation"><%= @card.cardType %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Subtypes:</td><td class="cardDetailInformation"><%= @card.subtypes %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Supertypes:</td><td class="cardDetailInformation"><%= @card.supertypes %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Original Type:</td><td class="cardDetailInformation"><%= @card.originalType %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Colors:</td><td class="cardDetailInformation"><%= @card.colors %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Color Identity:</td><td class="cardDetailInformation"><%= @card.colorIdentity %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Color Indicator:</td><td class="cardDetailInformation"><%= @card.colorIndicator %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.convertedManaCost %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Face Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.faceConvertedManaCost %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Face Flavor Name:</td><td class="cardDetailInformation"><%= @card.faceFlavorName %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Face Mana Value:</td><td class="cardDetailInformation"><%= @card.faceManaValue %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Face Name:</td><td class="cardDetailInformation"><%= @card.faceName %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Mana Cost:</td><td class="cardDetailInformation"><%= @card.manaCost %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Mana Value:</td><td class="cardDetailInformation"><%= @card.manaValue %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Flavor Name:</td><td class="cardDetailInformation"><%= @card.flavorName %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Flavor Text:</td><td class="cardDetailInformation"><%= @card.flavorText %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Original Text:</td><td class="cardDetailInformation"><%= @card.originalText %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Text:</td><td class="cardDetailInformation"><%= @card.text %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Leadership Skills:</td><td class="cardDetailInformation"><%= @card.leadershipSkills %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Power:</td><td class="cardDetailInformation"><%= @card.power %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Toughness:</td><td class="cardDetailInformation"><%= @card.toughness %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Life:</td><td class="cardDetailInformation"><%= @card.life %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Loyalty:</td><td class="cardDetailInformation"><%= @card.loyalty %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Keywords:</td><td class="cardDetailInformation"><%= @card.keywords %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Layout:</td><td class="cardDetailInformation"><%= @card.layout %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Finishes:</td><td class="cardDetailInformation"><%= @card.finishes %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Availability:</td><td class="cardDetailInformation"><%= @card.availability %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Rarity:</td><td class="cardDetailInformation"><%= @card.rarity %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Set Code:</td><td class="cardDetailInformation"><%= @card.setCode %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Printings:</td><td class="cardDetailInformation"><%= @card.printings %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Border Color:</td><td class="cardDetailInformation"><%= @card.borderColor %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Frame Effects:</td><td class="cardDetailInformation"><%= @card.frameEffects %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Frame Version:</td><td class="cardDetailInformation"><%= @card.frameVersion %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Duel Deck:</td><td class="cardDetailInformation"><%= @card.duelDeck %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Hand:</td><td class="cardDetailInformation"><%= @card.hand %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Side:</td><td class="cardDetailInformation"><%= @card.side %></td></tr>
+            <tr><td class="cardDetailNameMiddle">Signature:</td><td class="cardDetailInformation"><%= @card.signature %></td></tr>
+            <tr><td class="cardDetailNameMiddle">ASCII Name:</td><td class="cardDetailInformation"><%= @card.asciiName %></td></tr>
+        </table>
+    </div>
+    <div class="flex-item-right">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr><td class="cardDetailNameLeftRight">UUID Index:</td><td class="cardDetailInformation"><%= @card.uuid %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">EDH REC Rank:</td><td class="cardDetailInformation"><%= @card.edhrecRank %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">CardKingdom ID:</td><td class="cardDetailInformation"><%= @card.cardKingdomId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">CardKingdom Foil ID:</td><td class="cardDetailInformation"><%= @card.cardKingdomFoilId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">CardKingdom Etched Foil ID:</td><td class="cardDetailInformation"><%= @card.cardKingdomEtchedId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MCM ID:</td><td class="cardDetailInformation"><%= @card.mcmId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MCM Meta ID:</td><td class="cardDetailInformation"><%= @card.mcmMetaId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MTG Arena ID:</td><td class="cardDetailInformation"><%= @card.mtgArenaId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MTG JSON V4 Id:</td><td class="cardDetailInformation"><%= @card.mtgjsonV4Id %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MTGO ID:</td><td class="cardDetailInformation"><%= @card.mtgoId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">MTGO Foil ID:</td><td class="cardDetailInformation"><%= @card.mtgoFoilId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Multiverse ID:</td><td class="cardDetailInformation"><%= @card.multiverseId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Other Face IDs:</td><td class="cardDetailInformation"><%= @card.otherFaceIds %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Promo Types:</td><td class="cardDetailInformation"><%= @card.promoTypes %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Purchase URLs:</td><td class="cardDetailInformation"><%= @card.purchaseUrls %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Scryfall ID:</td><td class="cardDetailInformation"><%= @card.scryfallId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Scryfall Oracle ID:</td><td class="cardDetailInformation"><%= @card.scryfallOracleId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Scryfall Illustration ID:</td><td class="cardDetailInformation"><%= @card.scryfallIllustrationId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">TCG Player Id:</td><td class="cardDetailInformation"><%= @card.tcgplayerProductId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">TCG Player Etched Id:</td><td class="cardDetailInformation"><%= @card.tcgplayerEtchedProductId %></td></tr>
+            <tr><td class="cardDetailNameLeftRight">Variations:</td><td class="cardDetailInformation"><%= @card.variations %></td></tr>
+        </table>
+    </div>
+</div>

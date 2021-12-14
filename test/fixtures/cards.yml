@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  artist: MyText
+  availability: MyText
+  colorIdentity: MyText
+  colors: MyText
+  faceName: MyText
+  flavorText: MyText
+  manaCost: MyText
+  manaValue: 1.5
+  name: MyText
+  number: MyText
+  originalText: MyText
+  power: MyText
+  text: MyText
+  toughness: MyText
+  uuid: 
+
+two:
+  artist: MyText
+  availability: MyText
+  colorIdentity: MyText
+  colors: MyText
+  faceName: MyText
+  flavorText: MyText
+  manaCost: MyText
+  manaValue: 1.5
+  name: MyText
+  number: MyText
+  originalText: MyText
+  power: MyText
+  text: MyText
+  toughness: MyText
+  uuid: 
