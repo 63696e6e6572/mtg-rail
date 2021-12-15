@@ -1,4 +1,7 @@
 class CardsController < ApplicationController
+
+  http_basic_authenticate_with name: "<%= USER %>", password: "<%= PASSWORD %>", only: :destroy
+
   def index
     @cards = Card.all
   end
@@ -12,7 +15,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(article_params)
+    @card = Card.new(card_params)
 
     if @card.save
       redirect_to @card
@@ -28,7 +31,7 @@ class CardsController < ApplicationController
   def update
     @card = Card.find(params[:id])
 
-    if @card.update(article_params)
+    if @card.update(card_params)
       redirect_to @card
     else
       render :edit
@@ -44,6 +47,6 @@ class CardsController < ApplicationController
 
   private
     def card_params
-      params.require(:card).permit(:name, :text)
+      params.require(:card).permit(:name, :text, :status)
     end
 end

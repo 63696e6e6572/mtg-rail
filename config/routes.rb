@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "cards#index"
 
-  resources :cards
+  resources :cards do
+    resources :comments
+  end
 end
