@@ -11,6 +11,7 @@
   <div class="flex-item-left">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
       <tr><td class="cardDetailNameLeftRight">Number:</td><td class="cardDetailInformation"><%= @card.number %></td></tr>
+      <tr><td class="cardDetailNameLeftRight">UUID Index:</td><td class="cardDetailInformation"><%= @card.uuid %></td></tr>
       <tr><td class="cardDetailNameLeftRight">Artist:</td><td class="cardDetailInformation"><%= @card.artist %></td></tr>
       <tr><td class="cardDetailNameLeftRight">Alternative Deck Limit:</td><td class="cardDetailInformation"><%= @card.hasAlternativeDeckLimit %></td></tr>
       <tr><td class="cardDetailNameLeftRight">Content Warning:</td><td class="cardDetailInformation"><%= @card.hasContentWarning %></td></tr>
@@ -43,17 +44,17 @@
       <tr><td class="cardDetailNameMiddle">Colors:</td><td class="cardDetailInformation"><%= @card.colors %></td></tr>
       <tr><td class="cardDetailNameMiddle">Color Identity:</td><td class="cardDetailInformation"><%= @card.colorIdentity %></td></tr>
       <tr><td class="cardDetailNameMiddle">Color Indicator:</td><td class="cardDetailInformation"><%= @card.colorIndicator %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.convertedManaCost %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Face Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.faceConvertedManaCost %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Face Flavor Name:</td><td class="cardDetailInformation"><%= @card.faceFlavorName %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Face Mana Value:</td><td class="cardDetailInformation"><%= @card.faceManaValue %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Face Name:</td><td class="cardDetailInformation"><%= @card.faceName %></td></tr>
       <tr><td class="cardDetailNameMiddle">Mana Cost:</td><td class="cardDetailInformation"><%= @card.manaCost %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.convertedManaCost %></td></tr>
       <tr><td class="cardDetailNameMiddle">Mana Value:</td><td class="cardDetailInformation"><%= @card.manaValue %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Face Mana Value:</td><td class="cardDetailInformation"><%= @card.faceManaValue %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Face Converted Mana Cost:</td><td class="cardDetailInformation"><%= @card.faceConvertedManaCost %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Face Name:</td><td class="cardDetailInformation"><%= @card.faceName %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Face Flavor Name:</td><td class="cardDetailInformation"><%= @card.faceFlavorName %></td></tr>
       <tr><td class="cardDetailNameMiddle">Flavor Name:</td><td class="cardDetailInformation"><%= @card.flavorName %></td></tr>
-      <tr><td class="cardDetailNameMiddle">Flavor Text:</td><td class="cardDetailInformation"><%= @card.flavorText %></td></tr>
       <tr><td class="cardDetailNameMiddle">Original Text:</td><td class="cardDetailInformation"><%= @card.originalText %></td></tr>
       <tr><td class="cardDetailNameMiddle">Text:</td><td class="cardDetailInformation"><%= @card.text %></td></tr>
+      <tr><td class="cardDetailNameMiddle">Flavor Text:</td><td class="cardDetailInformation"><%= @card.flavorText %></td></tr>
       <tr><td class="cardDetailNameMiddle">Leadership Skills:</td><td class="cardDetailInformation"><%= @card.leadershipSkills %></td></tr>
       <tr><td class="cardDetailNameMiddle">Power:</td><td class="cardDetailInformation"><%= @card.power %></td></tr>
       <tr><td class="cardDetailNameMiddle">Toughness:</td><td class="cardDetailInformation"><%= @card.toughness %></td></tr>
@@ -84,7 +85,6 @@
   </div>
   <div class="flex-item-right">
     <table width="100%" cellpadding="0" cellspacing="0" border="0">
-      <tr><td class="cardDetailNameLeftRight">UUID Index:</td><td class="cardDetailInformation"><%= @card.uuid %></td></tr>
       <tr><td class="cardDetailNameLeftRight">EDH REC Rank:</td><td class="cardDetailInformation"><%= @card.edhrecRank %></td></tr>
       <tr><td class="cardDetailNameLeftRight">CardKingdom ID:</td><td class="cardDetailInformation"><%= @card.cardKingdomId %></td></tr>
       <tr><td class="cardDetailNameLeftRight">CardKingdom Foil ID:</td><td class="cardDetailInformation"><%= @card.cardKingdomFoilId %></td></tr>

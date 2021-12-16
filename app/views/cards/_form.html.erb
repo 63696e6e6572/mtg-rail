@@ -1,26 +1,578 @@
 <%= form_with model: card do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-    <% card.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+<%= javascript_pack_tag 'textarea-auto-resize' %>
+<div class="flex-container">
+  <div class="flex-item-left">
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :artist %></div>
+      <div class="cardFormField"><%= form.text_field :artist %></div>
+      <% card.errors.full_messages_for(:artist).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :hasAlternativeDeckLimit, "Has Alternative Deck Limit?" %></div>
+      <div class="cardFormField"><%= form.check_box :hasAlternativeDeckLimit %></div>
+      <% card.errors.full_messages_for(:hasAlternativeDeckLimit).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :hasContentWarning, "Has Content Warning?" %></div>
+      <div class="cardFormField"><%= form.check_box :hasContentWarning %></div>
+      <% card.errors.full_messages_for(:hasContentWarning).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :hasFoil, "Has Foil?" %></div>
+      <div class="cardFormField"><%= form.check_box :hasFoil %></div>
+      <% card.errors.full_messages_for(:hasFoil).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :hasNonFoil, "Has Non-Foil?" %></div>
+      <div class="cardFormField"><%= form.check_box :hasNonFoil %></div>
+      <% card.errors.full_messages_for(:hasNonFoil).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isAlternative, "Is Alternative?" %></div>
+      <div class="cardFormField"><%= form.check_box :isAlternative %></div>
+      <% card.errors.full_messages_for(:isAlternative).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isFullArt, "Is Full Art?" %></div>
+      <div class="cardFormField"><%= form.check_box :isFullArt %></div>
+      <% card.errors.full_messages_for(:isFullArt).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isOnlineOnly, "Is Online Only?" %></div>
+      <div class="cardFormField"><%= form.check_box :isOnlineOnly %></div>
+      <% card.errors.full_messages_for(:isOnlineOnly).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isOversized, "Is Oversized?" %></div>
+      <div class="cardFormField"><%= form.check_box :isOversized %></div>
+      <% card.errors.full_messages_for(:isOversized).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isPromo, "Is Promo?" %></div>
+      <div class="cardFormField"><%= form.check_box :isPromo %></div>
+      <% card.errors.full_messages_for(:isPromo).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isReprint, "Is Reprint?" %></div>
+      <div class="cardFormField"><%= form.check_box :isReprint %></div>
+      <% card.errors.full_messages_for(:isReprint).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isReserved, "Is Reserved?" %></div>
+      <div class="cardFormField"><%= form.check_box :isReserved %></div>
+      <% card.errors.full_messages_for(:isReserved).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isStarter, "Is Starter?" %></div>
+      <div class="cardFormField"><%= form.check_box :isStarter %></div>
+      <% card.errors.full_messages_for(:isStarter).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isStorySpotlight, "Is Story Spotlight?" %></div>
+      <div class="cardFormField"><%= form.check_box :isStorySpotlight %></div>
+      <% card.errors.full_messages_for(:isStorySpotlight).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isTextless, "Is Textless?" %></div>
+      <div class="cardFormField"><%= form.check_box :isTextless %></div>
+      <% card.errors.full_messages_for(:isTextless).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :isTimeshifted, "Is Timeshifted?" %></div>
+      <div class="cardFormField"><%= form.check_box :isTimeshifted %></div>
+      <% card.errors.full_messages_for(:isTimeshifted).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :watermark, "Watermark?" %></div>
+      <div class="cardFormField"><%= form.check_box :watermark %></div>
+      <% card.errors.full_messages_for(:watermark).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :originalReleaseDate, "Original Release Date" %></div>
+      <div class="cardFormField"><%= form.text_field :originalReleaseDate %></div>
+      <% card.errors.full_messages_for(:originalReleaseDate).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :created_at, "Created On" %></div>
+      <div class="cardFormField"><%= form.text_field :created_at %></div>
+      <% card.errors.full_messages_for(:created_at).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :updated_at, "Updated On" %></div>
+      <div class="cardFormField"><%= form.text_field :updated_at %></div>
+      <% card.errors.full_messages_for(:updated_at).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %><br>
-    <% card.errors.full_messages_for(:text).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="flex-item-middle">
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :name, "Card Name" %></div>
+      <div class="cardFormField"><%= form.text_field :name %></div>
+      <% card.errors.full_messages_for(:name).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :cardTypes, "Card Types" %></div>
+      <div class="cardFormField"><%= form.text_field :cardTypes %></div>
+      <% card.errors.full_messages_for(:cardTypes).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :cardType, "Card Type" %></div>
+      <div class="cardFormField"><%= form.text_field :cardType %></div>
+      <% card.errors.full_messages_for(:cardType).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :subtypes, "Sub-Types" %></div>
+      <div class="cardFormField"><%= form.text_field :subtypes %></div>
+      <% card.errors.full_messages_for(:subtypes).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :supertypes, "Super Types" %></div>
+      <div class="cardFormField"><%= form.text_field :supertypes %></div>
+      <% card.errors.full_messages_for(:supertypes).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :originalType, "Original Type" %></div>
+      <div class="cardFormField"><%= form.text_field :originalType %></div>
+      <% card.errors.full_messages_for(:originalType).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :colors, "Colors" %></div>
+      <div class="cardFormField"><%= form.text_field :colors %></div>
+      <% card.errors.full_messages_for(:colors).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :colorIdentity, "Color Identity" %></div>
+      <div class="cardFormField"><%= form.text_field :colorIdentity %></div>
+      <% card.errors.full_messages_for(:colorIdentity).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :colorIndicator, "Color Indicator" %></div>
+      <div class="cardFormField"><%= form.text_field :colorIndicator %></div>
+      <% card.errors.full_messages_for(:colorIndicator).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :manaCost, "Mana Cost" %></div>
+      <div class="cardFormField"><%= form.text_field :manaCost %></div>
+      <% card.errors.full_messages_for(:manaCost).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :convertedManaCost, "Converted Mana Cost" %></div>
+      <div class="cardFormField"><%= form.text_field :convertedManaCost %></div>
+      <% card.errors.full_messages_for(:convertedManaCost).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :manaValue, "Mana Value" %></div>
+      <div class="cardFormField"><%= form.text_field :manaValue %></div>
+      <% card.errors.full_messages_for(:manaValue).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :faceManaValue, "Face Mana Value" %></div>
+      <div class="cardFormField"><%= form.text_field :faceManaValue %></div>
+      <% card.errors.full_messages_for(:faceManaValue).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :faceConvertedManaCost, "Face Converted Mana Cost" %></div>
+      <div class="cardFormField"><%= form.text_field :faceConvertedManaCost %></div>
+      <% card.errors.full_messages_for(:faceConvertedManaCost).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :faceName, "Face Name" %></div>
+      <div class="cardFormField"><%= form.text_field :faceName %></div>
+      <% card.errors.full_messages_for(:faceName).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :faceFlavorName, "Face Flavor Name" %></div>
+      <div class="cardFormField"><%= form.text_field :faceFlavorName %></div>
+      <% card.errors.full_messages_for(:faceFlavorName).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :flavorName, "Flavor Name" %></div>
+      <div class="cardFormField"><%= form.text_field :flavorName %></div>
+      <% card.errors.full_messages_for(:flavorName).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :originalText, "Original Text" %></div>
+      <div class="cardFormField"><%= form.text_area :originalText, class: 'txta' %></div>
+      <% card.errors.full_messages_for(:originalText).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :text, "Text" %></div>
+      <div class="cardFormField"><%= form.text_area :text, class: 'txta' %></div>
+      <% card.errors.full_messages_for(:text).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :flavorText, "Flavor Text" %></div>
+      <div class="cardFormField"><%= form.text_area :flavorText, class: 'txta' %></div>
+      <% card.errors.full_messages_for(:flavorText).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :leadershipSkills, "Leadership Skills" %></div>
+      <div class="cardFormField"><%= form.text_field :leadershipSkills %></div>
+      <% card.errors.full_messages_for(:leadershipSkills).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :power, "Power" %></div>
+      <div class="cardFormField"><%= form.text_field :power %></div>
+      <% card.errors.full_messages_for(:power).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :toughness, "Toughness" %></div>
+      <div class="cardFormField"><%= form.text_field :toughness %></div>
+      <% card.errors.full_messages_for(:toughness).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :life, "Life" %></div>
+      <div class="cardFormField"><%= form.text_field :life %></div>
+      <% card.errors.full_messages_for(:life).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :loyalty, "Loyalty" %></div>
+      <div class="cardFormField"><%= form.text_field :loyalty %></div>
+      <% card.errors.full_messages_for(:loyalty).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :keywords, "Keywords" %></div>
+      <div class="cardFormField"><%= form.text_field :keywords %></div>
+      <% card.errors.full_messages_for(:keywords).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :layout, "Layout" %></div>
+      <div class="cardFormField"><%= form.text_field :layout %></div>
+      <% card.errors.full_messages_for(:layout).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :finishes, "Finishes" %></div>
+      <div class="cardFormField"><%= form.text_field :finishes %></div>
+      <% card.errors.full_messages_for(:finishes).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :availability, "Availability" %></div>
+      <div class="cardFormField"><%= form.text_field :availability %></div>
+      <% card.errors.full_messages_for(:availability).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :rarity, "Rarity" %></div>
+      <div class="cardFormField"><%= form.text_field :rarity %></div>
+      <% card.errors.full_messages_for(:rarity).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :setCode, "Set Code" %></div>
+      <div class="cardFormField"><%= form.text_field :setCode %></div>
+      <% card.errors.full_messages_for(:setCode).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :printings, "Printings" %></div>
+      <div class="cardFormField"><%= form.text_field :printings %></div>
+      <% card.errors.full_messages_for(:printings).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :borderColor, "Border Color" %></div>
+      <div class="cardFormField"><%= form.text_field :borderColor %></div>
+      <% card.errors.full_messages_for(:borderColor).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :frameEffects, "Frame Effects" %></div>
+      <div class="cardFormField"><%= form.text_field :frameEffects %></div>
+      <% card.errors.full_messages_for(:frameEffects).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :frameVersion, "Frame Version" %></div>
+      <div class="cardFormField"><%= form.text_field :frameVersion %></div>
+      <% card.errors.full_messages_for(:frameVersion).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :duelDeck, "Duel Deck" %></div>
+      <div class="cardFormField"><%= form.text_field :duelDeck %></div>
+      <% card.errors.full_messages_for(:duelDeck).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :hand, "Hand" %></div>
+      <div class="cardFormField"><%= form.text_field :hand %></div>
+      <% card.errors.full_messages_for(:hand).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :side, "Side" %></div>
+      <div class="cardFormField"><%= form.text_field :side %></div>
+      <% card.errors.full_messages_for(:side).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :signature, "Signature" %></div>
+      <div class="cardFormField"><%= form.text_field :signature %></div>
+      <% card.errors.full_messages_for(:signature).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :asciiName, "ASCII Name" %></div>
+      <div class="cardFormField"><%= form.text_field :asciiName %></div>
+      <% card.errors.full_messages_for(:asciiName).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
   </div>
   
-  <div>
-    <%= form.label :status %><br>
-    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="flex-item-right">
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :edhrecRank, "EDH Rec. Rank" %></div>
+      <div class="cardFormField"><%= form.text_field :edhrecRank %></div>
+      <% card.errors.full_messages_for(:edhrecRank).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :cardKingdomId, "Card Kingdom ID" %></div>
+      <div class="cardFormField"><%= form.text_field :cardKingdomId %></div>
+      <% card.errors.full_messages_for(:cardKingdomId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :cardKingdomFoilId, "Card Kingdom Foil Id" %></div>
+      <div class="cardFormField"><%= form.text_field :cardKingdomFoilId %></div>
+      <% card.errors.full_messages_for(:cardKingdomFoilId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :cardKingdomEtchedId, "Card Kingdom Etched ID" %></div>
+      <div class="cardFormField"><%= form.text_field :cardKingdomEtchedId %></div>
+      <% card.errors.full_messages_for(:cardKingdomEtchedId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mcmId, "MCM ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mcmId %></div>
+      <% card.errors.full_messages_for(:mcmId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mcmMetaId, "MCM Meta ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mcmMetaId %></div>
+      <% card.errors.full_messages_for(:mcmMetaId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mtgArenaId, "MTG Arena ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mtgArenaId %></div>
+      <% card.errors.full_messages_for(:mtgArenaId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mtgjsonV4Id, "MTG JSON V4 ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mtgjsonV4Id %></div>
+      <% card.errors.full_messages_for(:mtgjsonV4Id).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mtgoId, "MTGO ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mtgoId %></div>
+      <% card.errors.full_messages_for(:mtgoId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :mtgoFoilId, "MTGO Foil ID" %></div>
+      <div class="cardFormField"><%= form.text_field :mtgoFoilId %></div>
+      <% card.errors.full_messages_for(:mtgoFoilId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :multiverseId, "Multi-verse ID" %></div>
+      <div class="cardFormField"><%= form.text_field :multiverseId %></div>
+      <% card.errors.full_messages_for(:multiverseId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :otherFaceIds, "Other Face IDs" %></div>
+      <div class="cardFormField"><%= form.text_field :otherFaceIds %></div>
+      <% card.errors.full_messages_for(:otherFaceIds).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :promoTypes, "Promo Types" %></div>
+      <div class="cardFormField"><%= form.text_field :promoTypes %></div>
+      <% card.errors.full_messages_for(:promoTypes).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :purchaseUrls, "Purchase URLs" %></div>
+      <div class="cardFormField"><%= form.text_area :purchaseUrls, class: 'txta' %></div>
+      <% card.errors.full_messages_for(:purchaseUrls).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :scryfallId, "Scryfall ID" %></div>
+      <div class="cardFormField"><%= form.text_field :scryfallId %></div>
+      <% card.errors.full_messages_for(:scryfallId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :scryfallOracleId, "Scryfall Oracle ID" %></div>
+      <div class="cardFormField"><%= form.text_field :scryfallOracleId %></div>
+      <% card.errors.full_messages_for(:scryfallOracleId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :scryfallIllustrationId, "Scryfall Illustration ID" %></div>
+      <div class="cardFormField"><%= form.text_field :scryfallIllustrationId %></div>
+      <% card.errors.full_messages_for(:scryfallIllustrationId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :tcgplayerProductId, "TCG Player Product ID" %></div>
+      <div class="cardFormField"><%= form.text_field :tcgplayerProductId %></div>
+      <% card.errors.full_messages_for(:tcgplayerProductId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :tcgplayerEtchedProductId, "TCG Player Etched Product ID" %></div>
+      <div class="cardFormField"><%= form.text_field :tcgplayerEtchedProductId %></div>
+      <% card.errors.full_messages_for(:tcgplayerEtchedProductId).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelCenter"><%= form.label :variations, "Variations" %></div>
+      <div class="cardFormField"><%= form.text_field :variations %></div>
+      <% card.errors.full_messages_for(:variations).each do |message| %>
+        <div class="cardFormError"><%= message %></div>
+      <% end %>
+    </div>
+    <div class="cardFormRow">
+      <div class="cardFormLabelLeftRight"><%= form.label :status, "Status" %></div>
+      <div class="cardFormField"><%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %></div>
+    </div>
+    <div class="btn-cancel"><%= button_tag t('buttons.cancel'), type: "submit", name: "cancel", value: true %></div>
+    <div class="btn-submit"><%= form.submit %></div>
   </div>
 <% end %>
