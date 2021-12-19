@@ -1,0 +1,2 @@
+class CardRuling < ApplicationRecord
+end

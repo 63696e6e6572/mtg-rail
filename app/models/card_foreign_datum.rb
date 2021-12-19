@@ -1,0 +1,2 @@
+class CardForeignDatum < ApplicationRecord
+end

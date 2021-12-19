@@ -1,0 +1,2 @@
+class CardSetTranslation < ApplicationRecord
+end

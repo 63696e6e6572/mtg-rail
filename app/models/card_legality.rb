@@ -1,0 +1,2 @@
+class CardLegality < ApplicationRecord
+end
