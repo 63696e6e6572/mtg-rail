@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_19_061655) do
+ActiveRecord::Schema.define(version: 2021_12_19_051630) do
 
   create_table "cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "artist"
@@ -145,92 +145,6 @@ ActiveRecord::Schema.define(version: 2021_12_19_061655) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["uuid"], name: "uuid", unique: true
-  end
-
-  create_table "set_translations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.column "language", "enum('Chinese Simplified','Chinese Traditional','French','German','Italian','Japanese','Korean','Portuguese (Brazil)','Russian','Spanish')"
-    t.string "setCode", limit: 8, default: "", null: false
-    t.text "translation"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["setCode"], name: "setCode"
-  end
-
-  create_table "sets", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.integer "baseSetSize"
-    t.text "block"
-    t.text "booster", size: :long
-    t.string "code", limit: 8, default: "", null: false
-    t.boolean "isFoilOnly", default: false, null: false
-    t.boolean "isForeignOnly", default: false, null: false
-    t.boolean "isNonFoilOnly", default: false, null: false
-    t.boolean "isOnlineOnly", default: false, null: false
-    t.boolean "isPartialPreview", default: false, null: false
-    t.text "keyruneCode"
-    t.integer "mcmId"
-    t.integer "mcmIdExtras"
-    t.text "mcmName"
-    t.text "mtgoCode"
-    t.text "name"
-    t.text "parentCode"
-    t.date "releaseDate"
-    t.text "sealedProduct"
-    t.column "setType", "enum('core','masters','expansion','memorabilia','commander','starter','archenemy','box','draft_innovation','from_the_vault','funny','duel_deck','masterpiece','promo','premium_deck','planechase','token','vanguard','treasure_chest','spellbook')"
-    t.integer "tcgplayerGroupId"
-    t.integer "totalSetSize"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["code"], name: "code", unique: true
-  end
-
-  create_table "tokens", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "artist"
-    t.text "asciiName"
-    t.text "availability"
-    t.column "borderColor", "enum('black','borderless','silver','gold')"
-    t.text "colorIdentity"
-    t.text "colors"
-    t.text "edhrecRank"
-    t.text "faceName"
-    t.text "finishes"
-    t.text "flavorText"
-    t.text "frameEffects"
-    t.text "frameVersion"
-    t.boolean "hasFoil", default: false, null: false
-    t.boolean "hasNonFoil", default: false, null: false
-    t.boolean "isFullArt", default: false, null: false
-    t.boolean "isPromo", default: false, null: false
-    t.boolean "isReprint", default: false, null: false
-    t.text "keywords"
-    t.column "layout", "enum('token','art_series','emblem','normal')"
-    t.text "mcmId"
-    t.text "mtgArenaId"
-    t.text "mtgjsonV4Id"
-    t.text "multiverseId"
-    t.text "name"
-    t.text "number"
-    t.text "originalText"
-    t.text "originalType"
-    t.decimal "power", precision: 3
-    t.text "promoTypes"
-    t.text "reverseRelated"
-    t.text "scryfallId"
-    t.text "scryfallIllustrationId"
-    t.text "scryfallOracleId"
-    t.text "setCode"
-    t.text "side"
-    t.text "signature"
-    t.text "subtypes"
-    t.text "supertypes"
-    t.text "tcgplayerProductId"
-    t.text "text"
-    t.text "tokenType"
-    t.text "tokenTypes"
-    t.decimal "toughness", precision: 3
-    t.string "uuid", limit: 36, default: "", null: false
-    t.text "watermark"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "comments", "cards"
