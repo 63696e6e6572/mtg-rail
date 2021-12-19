@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_19_051630) do
+ActiveRecord::Schema.define(version: 2021_12_15_021834) do
 
   create_table "cards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "artist"
@@ -107,44 +107,6 @@ ActiveRecord::Schema.define(version: 2021_12_19_051630) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
     t.index ["card_id"], name: "index_comments_on_card_id"
-  end
-
-  create_table "foreign_data", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "cardType"
-    t.text "flavorText"
-    t.column "language", "enum('German','Spanish','French','Italian','Japanese','Portuguese (Brazil)','Russian','Chinese Simplified','Korean','Chinese Traditional','Phyrexian','Sanskrit','Latin','Hebrew','Arabic','Ancient Greek')"
-    t.integer "multiverseid"
-    t.text "name"
-    t.text "text"
-    t.string "uuid", limit: 36, default: "", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["uuid"], name: "uuid", unique: true
-  end
-
-  create_table "legalities", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.column "format", "enum('commander','duel','legacy','modern','paupercommander','penny','premodern','vintage','gladiator','historic','historicbrawl','pauper','pioneer','brawl','future','standard','oldschool')"
-    t.column "status", "enum('Legal','Restricted','Banned')"
-    t.string "uuid", limit: 36, default: "", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["uuid"], name: "uuid", unique: true
-  end
-
-  create_table "meta", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.date "date"
-    t.text "version"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "rulings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.date "date"
-    t.text "text"
-    t.string "uuid", limit: 36, default: "", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["uuid"], name: "uuid", unique: true
   end
 
   add_foreign_key "comments", "cards"
