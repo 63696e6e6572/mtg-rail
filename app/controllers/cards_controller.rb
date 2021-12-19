@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-
+  
   http_basic_authenticate_with name: "<%= USER %>", password: "<%= PASSWORD %>", except: [:index, :show]
 
   def index

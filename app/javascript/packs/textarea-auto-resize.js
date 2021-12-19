@@ -1,3 +1,8 @@
+// Name: Textarea Auto-Resize with JavaScript
+// Source: https://www.impressivewebs.com/textarea-auto-resize/
+// Credit: Louis Lazaris
+// https://codepen.io/impressivewebs
+
 // Targets all textareas with class "txta"
 let textareas = document.querySelectorAll('.txta'),
     hiddenDiv = document.createElement('div'),
